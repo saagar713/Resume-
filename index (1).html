@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar's Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* General Styles (Light Theme) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light background color */
+            color: #333; /* Dark text for better readability */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Resume Container Styles */
+        .resume-container {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9); /* Light card background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the card */
+            z-index: 2; /* Higher z-index to keep it on top of the animation */
+            overflow: hidden;
+        }
+
+        /* Header Styles */
+        h1, h2 {
+            text-align: center;
+            color: #3498db; /* Light blue color for headings */
+        }
+
+        /* Contact Info Links */
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Styling */
+        section {
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        /* Space Rocket Animation Styles */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Keep animation behind the content */
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        /* Rocket Styling */
+        .rocket {
+            position: absolute;
+            width: 50px;
+            height: 100px;
+            background-color: #e74c3c; /* Rocket body color */
+            border-radius: 50% 50% 0 0; /* Rounded top for the rocket */
+            bottom: -100px;
+            animation: launch 6s infinite ease-in-out;
+            z-index: 3;
+        }
+
+        /* Rocket Flame Effect */
+        .rocket .flame {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 40px;
+            background: linear-gradient(to top, #ff4500, #f39c12);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.7);
+        }
+
+        /* Rocket Fins */
+        .rocket .fin {
+            position: absolute;
+            width: 15px;
+            height: 20px;
+            background-color: #34495e; /* Rocket fins color */
+            bottom: -5px;
+        }
+
+        .rocket .fin.left {
+            left: -15px;
+            transform: rotate(-30deg);
+        }
+
+        .rocket .fin.right {
+            right: -15px;
+            transform: rotate(30deg);
+        }
+
+        /* Keyframes for Rocket Animation */
+        @keyframes launch {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100vh);
+            }
+        }
+
+        /* Sun Styling */
+        .sun {
+            position: absolute;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #f39c12, #f1c40f);
+            border-radius: 50%;
+            box-shadow: 0 0 50px rgba(255, 204, 0, 0.8);
+            z-index: 1;
+        }
+
+        /* Rocket Positions */
+        .rocket:nth-child(1) {
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .rocket:nth-child(2) {
+            left: 45%;
+            animation-delay: 1s;
+        }
+
+        .rocket:nth-child(3) {
+            left: 75%;
+            animation-delay: 2s;
+        }
+
+        /* Skills Section Styling */
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills ul li {
+            margin: 10px 0;
+        }
+
+        /* Star Emojis Falling Animation */
+        .falling-star {
+            position: absolute;
+            font-size: 24px;
+            animation: fall 4s infinite linear;
+            opacity: 0.9;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateX(0) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-200px) translateY(200vh);
+                opacity: 0;
+            }
+        }
+
+        /* Generate multiple falling star emojis at random positions */
+        .falling-star:nth-child(1) {
+            left: 95%;
+            animation-duration: 4.5s;
+            animation-delay: 0s;
+            font-size: 28px;
+        }
+
+        .falling-star:nth-child(2) {
+            left: 90%;
+            animation-duration: 5s;
+            animation-delay: 0.5s;
+            font-size: 22px;
+        }
+
+        .falling-star:nth-child(3) {
+            left: 85%;
+            animation-duration: 4.2s;
+            animation-delay: 1s;
+            font-size: 26px;
+        }
+
+        .falling-star:nth-child(4) {
+            left: 80%;
+            animation-duration: 5.2s;
+            animation-delay: 0s;
+            font-size: 24px;
+        }
+
+        .falling-star:nth-child(5) {
+            left: 70%;
+            animation-duration: 4.8s;
+            animation-delay: 1.2s;
+            font-size: 23px;
+        }
+
+        .falling-star:nth-child(6) {
+            left: 60%;
+            animation-duration: 4.5s;
+            animation-delay: 2s;
+            font-size: 25px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Space Rocket Background Animation on Card -->
+    <div class="resume-container">
+        <div class="background-animation">
+            <!-- Three Realistic Rockets -->
+            <div class="rocket">
+                <div class="flame"></div>
+                <div class="fin left"></div>
+                <div class="fin right"></div>
+            </div>
+            <div class="rocket">
+                <div class="flame"></div>
+                <div class="fin left"></div>
+                <div class="fin right"></div>
+            </div>
+            <div class="rocket">
+                <div class="flame"></div>
+                <div class="fin left"></div>
+                <div class="fin right"></div>
+            </div>
+        </div>
+
+        <!-- Sun Above Resume -->
+        <div class="sun"></div>
+
+        <!-- Falling Star Emojis Animation -->
+        <div class="falling-star">⭐</div>
+        <div class="falling-star">🌟</div>
+        <div class="falling-star">✨</div>
+        <div class="falling-star">💫</div>
+        <div class="falling-star">🌟</div>
+
+        <!-- Resume Content -->
+        <header class="resume-header">
+            <h1 class="animate__animated animate__fadeIn">Sagar's Resume</h1>
+            <div class="contact-info">
+              
+                <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sagaronly713@gmail.com" target="_blank">sagaronly713@gmail.com</a></p>
+                <p>Instagram: <a href="https://instagram.com/saagar.713" target="_blank">saagar.713</a></p>
+                <p>WhatsApp: <a href="https://wa.me/918218849064" target="_blank">+91 8218849064</a></p>
+            </div>
+        </header>
+
+        <section class="summary">
+            <h2 class="animate__animated animate__fadeInUp">Summary</h2>
+            <p class="animate__animated animate__fadeInUp">
+                Passionate software engineer specializing in web and mobile app development. Experienced in building intuitive, responsive, and efficient solutions using modern frameworks and technologies. Adept at problem-solving and delivering user-friendly solutions.
+            </p>
+        </section>
+
+        <section class="education">
+            <h2 class="animate__animated animate__fadeInUp">Education</h2>
+            <p><strong>B.Voc in Artificial Intelligence & Robotics</strong> - Dayalbagh University (2022 - 2025)</p>
+            <p><strong>Diploma in Engineering</strong> - Dayalbagh Educational Institute (2019 - 2022)</p>
+            <p><strong>Senior High School</strong> - DAV Senior Secondary School (2019)</p>
+        </section>
+
+        <section class="experience">
+            <h2 class="animate__animated animate__fadeInUp">Experience</h2>
+            <p><strong>Freelance Developer</strong> | 2023-Present</p>
+            <ul>
+                <li>Developed responsive web applications using modern front-end and back-end frameworks.</li>
+                <li>Created user-friendly mobile applications using Flutter for cross-platform solutions.</li>
+                <li>Designed and implemented APIs and databases to enhance application performance.</li>
+            </ul>
+        </section>
+
+        <section class="projects">
+            <h2 class="animate__animated animate__fadeInUp">Projects</h2>
+            <p><strong>Portfolio Website</strong>: Showcases skills and projects with responsive design. [<a href="#">GitHub Link</a>]</p>
+            <p><strong>Task Manager App</strong>: A productivity app designed with React.js and Node.js. [<a href="#">GitHub Link</a>]</p>
+            <p><strong>E-commerce Mobile App</strong>: Built with Flutter, featuring secure payment integration. [<a href="#">GitHub Link</a>]</p>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills">
+            <h2 class="animate__animated animate__fadeInUp">Skills</h2>
+            <ul>
+                <li>Web Development: HTML, CSS, JavaScript, React</li>
+                <li>Mobile App Development: Flutter, Dart</li>
+                <li>Backend Development: Node.js, Express</li>
+                <li>Version Control: Git, GitHub</li>
+                <li>Database Management: MySQL, MongoDB</li>
+                <li>Problem-Solving & Algorithms</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Sagar | All Rights Reserved</p>
+        </footer>
+    </div>
+</body>
+
+</html>
