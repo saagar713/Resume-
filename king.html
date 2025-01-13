@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar's Resume</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f6fc;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 30px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+        h1 {
+            font-size: 40px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 24px;
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 20px;
+            color: #34495e;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 20px;
+        }
+        .header .contact {
+            text-align: right;
+        }
+        .section {
+            margin: 30px 0;
+        }
+        .skills, .certificates {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .skills li, .certificates li {
+            margin: 10px 0;
+            padding: 15px;
+            background: #f7f9fc;
+            border: 1px solid #eaeaea;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+        .skills li:hover, .certificates li:hover {
+            transform: scale(1.05);
+        }
+        .experience ul, .projects ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        .experience ul li, .projects ul li {
+            margin: 10px 0;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .languages {
+            display: flex;
+            justify-content: start;
+            gap: 20px;
+        }
+        .languages p {
+            background: #f7f9fc;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 1px solid #eaeaea;
+            margin: 0;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .contact a {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>Sagar</h1>
+                <p>Passionate software engineer specializing in web and mobile app development. Experienced in building intuitive, responsive, and efficient solutions using modern frameworks and technologies. Adept at problem-solving and delivering user-friendly solutions.</p>
+            </div>
+            <div class="contact">
+                <p>242A Shahganj</p>
+                <p>Agra</p>
+                <p>8218489064</p>
+                <p><a href="mailto:sagaronly713@gmail.com">sagaronly713@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div class="section experience">
+            <h2>Experience</h2>
+            <h3>Freelance Developer | 2023-Present</h3>
+            <ul>
+                <li>Developed responsive web applications using modern front-end and back-end frameworks.</li>
+                <li>Created user-friendly mobile applications using Flutter for cross-platform solutions.</li>
+                <li>Designed and implemented APIs and databases to enhance application performance.</li>
+            </ul>
+        </div>
+
+        <div class="section education">
+            <h2>Education</h2>
+            <p><span class="bold">B.Voc in Artificial Intelligence & Robotics</span> - Dayalbagh University (2022-2025)</p>
+            <p><span class="bold">Diploma in Engineering</span> - Dayalbagh Educational Institute (2019-2022)</p>
+            <p><span class="bold">Senior High School</span> - DAV Senior Secondary School (2019)</p>
+        </div>
+
+        <div class="section projects">
+            <h2>Projects</h2>
+            <ul>
+                <li><span class="bold">Portfolio Website:</span> Showcases skills and projects with responsive design.</li>
+                <li><span class="bold">Task Manager App:</span> A productivity app designed with React.js and Node.js.</li>
+                <li><span class="bold">E-commerce Mobile App:</span> Built with Flutter, featuring secure payment integration.</li>
+            </ul>
+        </div>
+
+        <div class="section skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Web Development: HTML, CSS, JavaScript, React</li>
+                <li>Mobile App Development: Flutter, Dart</li>
+                <li>Backend Development: Node.js, Express</li>
+                <li>Version Control: Git, GitHub</li>
+                <li>Database Management: MySQL, MongoDB</li>
+                <li>Problem-Solving & Algorithms</li>
+            </ul>
+        </div>
+
+        <div class="section certificates">
+            <h2>Certificates</h2>
+            <ul>
+                <li>Tata Data Visualization</li>
+                <li>JP Morgan Software Engineering Simulation (via Forage)</li>
+                <li>Space Program (ISRO) (Ongoing)</li>
+            </ul>
+        </div>
+
+        <div class="section languages">
+            <h2>Languages</h2>
+            <div class="languages">
+                <p>English</p>
+                <p>Hindi</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
